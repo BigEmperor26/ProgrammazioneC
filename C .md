@@ -146,13 +146,44 @@ TipoDato *puntatore;
 | = += -= /= %= \^= \|= <<= >>= | da destra a sinistra|
 | ,| da sinistra a destra|
 
-###### casting
-###### i++ e ++i
 ---
 ### Funzioni
+```c
+TipoDato nomeFunzione(Tipo parametri,...){
+return TipoDato
+};
+```
+##### FILE
+```c
+FILE *fp;
+fp=fopen("nomefile",modalità);
+fclose(fp);
+//altre funzioni
+int remove(fp)
+int rename(nome,nuovonome)
+int ferror(FILE *fp)
+int fseek(FILE *fp, long int offset, int ref)`
+```
 ##### Output
-###### printf
+- Output su **FILE**
+- **`stdout`** è un **FILE** per il monitor
+```c 
+int printf("modalità",dato)//stdout
+int fprintf(FILE *fp,"modalità",dato)
+int fwrite()
+int putchar(char c)//stdout
+int putc(int c, FILE *fp)
+```
 #### Input
-###### scanf
+- Input su **FILE**
+- **`stdin`** è un **FILE** per la tastiera
+```c
+int scanf("modalità",&dato)//stdin non è richiesto & per strighe,array e puntatori
+int fscanf(FILE *fp,"modalità",&dato)
+int fread()
+int getchar()//stdin
+int getc(FILE *fp)
+char *fgets(char *s, int length, FILE *fp)
+```
 ---
 *Realizzato da Michele Yin.*
