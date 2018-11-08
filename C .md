@@ -88,13 +88,13 @@ enum TipoDato{ val1, val2...};
 struct{
 	int a;
 	...
-}
+};
 ```
 - contiene tipi di dato. Accesso agli elementi tramite __`.`__ 
 
 ##### typedef
 ```c
-typedef TipoDato NuovoTipoDato
+typedef TipoDato NuovoTipoDato;
 ```
 - NuovoTipoDato diventa una keyword equivalente a TipoDato
 - Utilizzo con __`enum`__ `typedef enum{val1,val2};` 
@@ -150,7 +150,7 @@ TipoDato *puntatore;
 ### Funzioni
 ```c
 TipoDato nomeFunzione(Tipo parametri,...){
-return TipoDato
+return TipoDato;
 };
 ```
 ##### FILE
@@ -158,7 +158,7 @@ return TipoDato
 FILE *fp;
 fp=fopen("nomefile",modalità);
 fclose(fp);
-//altre funzioni
+//Header di altre funzioni
 int remove(fp)
 int rename(nome,nuovonome)
 int ferror(FILE *fp)
