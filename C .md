@@ -71,6 +71,7 @@ __`int`__ __`char`____`float`____`double`__
 
 - non è presente un tipo __`bool`__
 - confronto tra numeri in virgola mobile
+- opzionali attributi __`long`__ __`const`__
 
 ```c
 //float a == float b
@@ -100,7 +101,14 @@ typedef TipoDato NuovoTipoDato;
 - Utilizzo con __`enum`__ `typedef enum{val1,val2};` 
 - Utilizzo con __`struct`__ `typedef struct TipoDato{
 }TipoDato;`
-
+```c
+typedef TipoDato * PuntatoreTipoDato;
+```
+- PuntatoreTipoDato è un puntatore a TipoDato
+```c
+typedef TipoDato ArrayTipoDato[10];
+```
+- __`[]`__ l'array va a destra. __`ArrayTipoDato`__ è un __`TipoDato[20]`__
 ##### array
 ```c
 TipoDato Identificatore[];
@@ -153,37 +161,103 @@ TipoDato nomeFunzione(Tipo parametri,...){
 return TipoDato;
 };
 ```
+- `return TipoDato;` termina il blocco di istruzioni della funzione
 ##### FILE
 ```c
 FILE *fp;
 fp=fopen("nomefile",modalità);
 fclose(fp);
 //Header di altre funzioni
-int remove(fp)
-int rename(nome,nuovonome)
-int ferror(FILE *fp)
-int fseek(FILE *fp, long int offset, int ref)`
+int remove(fp);
+int rename(nome,nuovonome);
+int ferror(FILE *fp);
+int fseek(FILE *fp, long int offset, int ref);`
 ```
+- **Modalità:** 
+
+|Lettura|Scrittura|Append|
+|-----|-------|-----|----|
+|r|w|a|Per caratteri|
+|rb|wb|ab|Binario|
+|r+|w+|a+|Scrittura E Lettura
+|r+b|w+b|a+b|Scrittura E Lettura Binaria
+ 
 ##### Output
 - Output su **FILE**
 - **`stdout`** è un **FILE** per il monitor
-```c 
-int printf("modalità",dato)//stdout
-int fprintf(FILE *fp,"modalità",dato)
-int fwrite()
-int putchar(char c)//stdout
-int putc(int c, FILE *fp)
+```c
+//STDOUT 
+int printf("modalità",dato);
+int putchar(char c);
+```
+```c
+//FILE
+int fprintf(FILE *fp,"modalità",dato);
+int putc(int c, FILE *fp);
+int fwrite(void *ptr, dim_elem, n_elem, FILE *fp);
 ```
 #### Input
 - Input su **FILE**
 - **`stdin`** è un **FILE** per la tastiera
 ```c
-int scanf("modalità",&dato)//stdin non è richiesto & per strighe,array e puntatori
-int fscanf(FILE *fp,"modalità",&dato)
-int fread()
-int getchar()//stdin
-int getc(FILE *fp)
-char *fgets(char *s, int length, FILE *fp)
+//STDIN
+int scanf("modalità",&dato); non è richiesto & per strighe,array e puntatori
+int getchar();
+```
+```c
+//FILE
+int fscanf(FILE *fp,"modalità",&dato);
+int getc(FILE *fp);
+int fread(void *ptr, dim_elem, n_elem, FILE *fp);
+char *fgets(char *s, int length, FILE *fp);
 ```
 ---
+### Strutture dati dinamiche
+
+__Allocazione__
+```c
+//C
+Tipo *ptr = malloc(sizeof(Tipo));
+```
+```c++
+//C++
+Tipo *ptr = new Tipo;
+```
+
+__De-allocazione__
+```c
+//C
+free (ptr);
+```
+```c++
+//C++
+delete ptr = new Tipo;
+```
+---
+#### Liste
+```c
+//lista ->
+struct EL{
+    tipoDato info;
+    struct EL *prox;
+};
+typedef EL ElemLista;
+typedef ElemLista *ListadiElem;//puntatore ad una lista
+```
+- __Testa__ e __coda__. La __coda__ __`-> NULL`__
+- Accesso sequenziale. Da __Testa__ e __coda__.
+- dimensione dinamica
+```c
+//Lista doppiamente linkata <->
+struct EL{
+    tipoDato info;
+    struct EL *prox;
+    struct EL *prec;
+};
+```
+#### Stack
+- __LIFO__ Last In First Out
+- Implementazione con __Array__ o __Liste__
+- costo unitario di __`pop()`__ e __`push()`__
+
 *Realizzato da Michele Yin.*
