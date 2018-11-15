@@ -183,7 +183,9 @@ int feof(FILE *fp);
 |r+|w+|a+|Scrittura E Lettura|
 |r+b|w+b|a+b|Scrittura E Lettura Binaria|
 
-- non usare +, problemi di gestione dell'indice
+- non usare __+__, problemi di gestione dell'indice
+- _append_ non cancella il file precedente
+- _write_ cancella il file omonimo
  
 ##### Output
 - Output su **FILE**
