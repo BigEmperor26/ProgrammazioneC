@@ -195,6 +195,7 @@ int putchar(char c);
 int fprintf(FILE *fp,"modalità",dato);
 int putc(int c, FILE *fp);
 int fwrite(void *ptr, dim_elem, n_elem, FILE *fp);
+int fputs (const char * str, FILE * stream );
 ```
 #### Input
 - Input su **FILE**
