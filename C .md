@@ -172,7 +172,7 @@ int remove(fp);
 int rename(nome,nuovonome);
 int ferror(FILE *fp);
 int fseek(FILE *fp, long int offset, int ref);
-int fEOF(FILE *fp);
+int feof(FILE *fp);
 ```
 - **Modalità:** 
 
@@ -182,7 +182,8 @@ int fEOF(FILE *fp);
 |rb|wb|ab|Binario|
 |r+|w+|a+|Scrittura E Lettura|
 |r+b|w+b|a+b|Scrittura E Lettura Binaria|
--non usare +, problemi di gestione dell'indice
+
+- non usare +, problemi di gestione dell'indice
  
 ##### Output
 - Output su **FILE**
