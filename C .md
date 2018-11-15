@@ -175,12 +175,12 @@ int fseek(FILE *fp, long int offset, int ref);`
 ```
 - **Modalità:** 
 
-|Lettura|Scrittura|Append|
+|Lettura|Scrittura|Append||
 |-----|-------|-----|----|
 |r|w|a|Per caratteri|
 |rb|wb|ab|Binario|
-|r+|w+|a+|Scrittura E Lettura
-|r+b|w+b|a+b|Scrittura E Lettura Binaria
+|r+|w+|a+|Scrittura E Lettura|
+|r+b|w+b|a+b|Scrittura E Lettura Binaria|
  
 ##### Output
 - Output su **FILE**
