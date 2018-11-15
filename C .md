@@ -191,14 +191,18 @@ int feof(FILE *fp);
 ```c
 //STDOUT 
 int printf("modalità",dato);
+//CARATTERI
 int putchar(char c);
 ```
 ```c
 //FILE
 int fprintf(FILE *fp,"modalità",dato);
+//CARATTERI
 int putc(int c, FILE *fp);
-int fwrite(void *ptr, dim_elem, n_elem, FILE *fp);
+//LETTURA STRINGA
 int fputs (const char * str, FILE * stream );
+//SCRITTURA BINARIA
+int fwrite(void *ptr, dim_elem, n_elem, FILE *fp);
 ```
 #### Input
 - Input su **FILE**
@@ -206,14 +210,19 @@ int fputs (const char * str, FILE * stream );
 ```c
 //STDIN
 int scanf("modalità",&dato); non è richiesto & per strighe,array e puntatori
+//CARATTERI
 int getchar();
 ```
 ```c
 //FILE
 int fscanf(FILE *fp,"modalità",&dato);
+//CARATTERI
 int getc(FILE *fp);
-int fread(void *ptr, dim_elem, n_elem, FILE *fp);
+//LETTURA STRINGA
 char *fgets(char *s, int length, FILE *fp);
+//LETTURA BINARIA
+int fread(void *ptr, dim_elem, n_elem, FILE *fp);
+
 ```
 ---
 ### Strutture dati dinamiche
