@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1542300874 source:c:\users\micky\documents\codeblocks\liste\liste.c
+	<stdio.h>
+	<stdlib.h>
+	"liste.h"
+
+1542300605 c:\users\micky\documents\codeblocks\liste\liste.h
+
+1542300828 source:c:\users\micky\documents\codeblocks\liste\main.c
+	<stdio.h>
+	<stdlib.h>
+	"liste.h"
+
