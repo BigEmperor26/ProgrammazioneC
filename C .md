@@ -171,7 +171,8 @@ fclose(fp);
 int remove(fp);
 int rename(nome,nuovonome);
 int ferror(FILE *fp);
-int fseek(FILE *fp, long int offset, int ref);`
+int fseek(FILE *fp, long int offset, int ref);
+int fEOF(FILE *fp);
 ```
 - **Modalità:** 
 
@@ -181,6 +182,7 @@ int fseek(FILE *fp, long int offset, int ref);`
 |rb|wb|ab|Binario|
 |r+|w+|a+|Scrittura E Lettura|
 |r+b|w+b|a+b|Scrittura E Lettura Binaria|
+-non usare +, problemi di gestione dell'indice
  
 ##### Output
 - Output su **FILE**
