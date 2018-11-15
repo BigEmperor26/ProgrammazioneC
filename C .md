@@ -34,7 +34,7 @@ switch(int){
 }
 ```
 - la variabile deve essere **`int`**, letta come **`char`**
-- fall-through le istruzioni vengono eseguite e cascata
+- _fall-through_ le istruzioni vengono eseguite a cascata
 - **`break`** rompe il flusso
 - __`default`__ è eseguito senza corrispondenza
 
@@ -70,8 +70,8 @@ continue;
 __`int`__ __`char`____`float`____`double`__
 
 - non è presente un tipo __`bool`__
-- confronto tra numeri in virgola mobile
 - opzionali attributi __`long`__ __`const`__
+- confronto tra numeri in virgola mobile
 
 ```c
 //float a == float b
@@ -81,7 +81,7 @@ __`int`__ __`char`____`float`____`double`__
 ```c
 enum TipoDato{ val1, val2...};
 ```
-- operazione sintattica. val1 è di tipo __`int `__
+- operazione sintattica. `val1` è di tipo __`int `__
 - il primo elemento se non è specificato è __`0`__
 
 ##### struct
@@ -98,13 +98,13 @@ struct{
 typedef TipoDato NuovoTipoDato;
 ```
 - NuovoTipoDato diventa una keyword equivalente a TipoDato
-- Utilizzo con __`enum`__ `typedef enum{val1,val2};` 
+- Utilizzo con __`enum`__ `typedef enum{val1,val2}TipoDato;` 
 - Utilizzo con __`struct`__ `typedef struct TipoDato{
 }TipoDato;`
 ```c
 typedef TipoDato * PuntatoreTipoDato;
 ```
-- PuntatoreTipoDato è un puntatore a TipoDato
+- `PuntatoreTipoDato` è un puntatore a `TipoDato`
 ```c
 typedef TipoDato ArrayTipoDato[10];
 ```
@@ -131,7 +131,7 @@ char stringa[];
 TipoDato *puntatore;
 ```
 - variabile che punta ad una cella di memoria
-- nel caso di puntatori a __`struct`__ __:__ si usa __`puntatore->elemento`__ invece di __`(*puntatore).elemento`__ 
+- nel caso di puntatori a __`struct`__ __:__ __`puntatore->elemento`__ è equivalente a __`(*puntatore).elemento`__ 
 
 
 ---
@@ -165,7 +165,7 @@ return TipoDato;
 ##### FILE
 ```c
 FILE *fp;
-fp=fopen("nomefile",modalità);
+fp=fopen("nomefile","modalità");
 fclose(fp);
 //Header di altre funzioni
 int remove(fp);
@@ -174,6 +174,17 @@ int ferror(FILE *fp);
 int fseek(FILE *fp, long int offset, int ref);
 int feof(FILE *fp);
 ```
+- Contare gli elementi di un file
+```c
+while(!foef(fp)){
+    fscanf(fp,"%d",n);
+    if(!foef(fp)){ i++;}
+}
+```
+oppure
+```c
+while(fscanf(fp,"%d",n)==1){ i++;}
+``` 
 - **Modalità:** 
 
 |Lettura|Scrittura|Append||
@@ -201,7 +212,7 @@ int putchar(char c);
 int fprintf(FILE *fp,"modalità",dato);
 //CARATTERI
 int putc(int c, FILE *fp);
-//LETTURA STRINGA
+//SCRITTURA STRINGA
 int fputs (const char * str, FILE * stream );
 //SCRITTURA BINARIA
 int fwrite(void *ptr, dim_elem, n_elem, FILE *fp);
@@ -246,7 +257,7 @@ free (ptr);
 ```
 ```c++
 //C++
-delete ptr = new Tipo;
+delete ptr;
 ```
 ---
 #### Liste
