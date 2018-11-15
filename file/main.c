@@ -25,7 +25,7 @@ int main()
     if(fp==NULL){   return 1; }
     while(fscanf(fp,"%d",&n)==1){ i++;}
     fclose(fp);
-    printf("\n\n%d",i);//ci sono due numeri in REPO.txt
+    printf("\n\n%d",i);//ci sono due numeri in REPO.txt 10 e 9
     //altro esempio di conta del numero di elementi di un file
     int m;
     int j=0;
@@ -35,7 +35,8 @@ int main()
         fscanf(fp,"%d",&m);
         if(!feof(fp)){ j++;}
     }
-    printf("\n\n%d",j);//ci sono due numeri in REPO.txt
+    fclose(fp);
+    printf("\n\n%d",j);//ci sono due numeri in REPO.txt 10 e 9
     //altro esempio ancora di conta di elementi di un file, con caratteri stavolta
     int o;
     int h=0;
@@ -45,6 +46,7 @@ int main()
         fscanf(fp,"%c",&o);
         if(!feof(fp)){ h++;}
     }
+    fclose(fp);
     printf("\n\n%d",h);//in questo caso in REPO.txt sono 5 caratteri '1' '0' '\n' '9' '\n' evita il carattere 'EOF'
     //un altro esempio ancora di conta di elementi su un file
     int p;
