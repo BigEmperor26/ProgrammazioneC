@@ -12,7 +12,7 @@ boolean listavuota(ListadiInt Lista){
     return false;
 }
 //stampa ok!
-void stampa(ListadiInt Lista){//attenzione, anche se Lista è passato per parametro, i valori della lista si trovano nello HEAP, quindi sono modificabili
+void stampa(ListadiInt Lista){//attenzione, anche se Lista Ã¨ passato per parametro, i valori della lista si trovano nello HEAP, quindi sono modificabili
     while(!listavuota(Lista)){
         printf("%d\n",Lista->info);
         //Lista->info=0; esempio di modifica
@@ -59,7 +59,7 @@ int inserisci_coda(ListadiInt *Lista,int elem){
 int inserisci(ListadiInt *Lista,int elem, int posizione){
     ListadiInt tmp=*Lista;
     int i=0;
-    for(i=0;i<posizione-1;i++){//controllo che la posizione non sia più grande della lista
+    for(i=0;i<posizione-1;i++){//controllo che la posizione non sia piÃ¹ grande della lista
         if(!listavuota(tmp->next)){
            tmp=tmp->next;
         }else{
