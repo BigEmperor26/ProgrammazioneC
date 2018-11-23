@@ -92,7 +92,20 @@ struct{
 };
 ```
 - contiene tipi di dato. Accesso agli elementi tramite __`.`__ 
-
+- Note sulla programmazione ad oggetti
+```c++
+//C++
+typedef struct Tdato{
+	int a;
+	...
+	Tdato(){}//costruttore
+	tipo metodo(tipo1 argomento1,tipo2 argomento2...){}//metodo generico
+	~Tdato(){}//distruttore
+}Typedef;
+```
+- i metodi sono chiamati con __`identificatore_istanza.metodo(argoment01,argomento2)`__
+- i metodi hanno accesso a tutti i campi della propria istanza
+- quando una __`struct`__ contiene __`*`__ puntatori, è sempre passata per _indirizzo_
 ##### typedef
 ```c
 typedef TipoDato NuovoTipoDato;
@@ -108,7 +121,7 @@ typedef TipoDato * PuntatoreTipoDato;
 ```c
 typedef TipoDato ArrayTipoDato[10];
 ```
-- __`[]`__ l'array va a destra. __`ArrayTipoDato`__ è un __`TipoDato[20]`__
+- __`[]`__ l'array va a destra. __`ArrayTipoDato`__ è un __`TipoDato[10]`__
 ##### array
 ```c
 TipoDato Identificatore[];
@@ -118,6 +131,38 @@ TipoDato Identificatore[];
 - array multidimensionali `TipoDato Identificatore[][]...[];`
 - passaggio alle funzioni tramite _indirizzo_
 
+##### puntatori
+```c
+TipoDato* puntatore;
+```
+- variabile che punta ad una cella di memoria
+- nel caso di puntatori a __`struct`__ __:__ __`puntatore->elemento`__ è equivalente a __`(*puntatore).elemento`__ 
+
+- In C puntatori e array sono molto simili
+```c
+TipoDato* puntatore;
+//puntatore punta a una zona di memoria con lo spazio di 11 caratteri. Allocazione
+puntatore=malloc(sizeof(char* [11]));
+*(puntatore+1)='0';//assegno 0 al secondo carattere. Equivalente a 
+puntatore[1]='0';
+free(puntatore);//De-allocazione
+```
+```c
+//C++
+char** matrice;
+//puntatore punta a una zona di memoria con lo spazio di 10 puntatori ad char. Allocazione
+matrice=new char*[10];
+for(int i=0;i<10;i++){
+	matrice[i]=new char[11];//allocazione di una stringa di dimensione 11 in maniera dinamica. Equivalente a
+	*(matrice+1)=new char[11];
+}
+for(int i=0;i<10;i++){
+	delete matrice[i];//De-allocazione dei singoli array
+}
+delete matrice;//De-allocazione di matrice
+```
+- il vantaggio principale è che le righe/colonne possono essere di dimensioni diverse.
+
 ##### stringhe
 ```c
 char stringa[];
@@ -126,14 +171,10 @@ char stringa[];
 - ultimo elemento __`'\0'`__
 - passaggio alle funzioni tramite _indirizzo_
 
-##### puntatori
 ```c
-TipoDato *puntatore;
+int strlen(char* string);//restituisce la lunghezza della stringa, senza '\0'
+int strcpy(char* copy,const char* origin)//copia origin su copy
 ```
-- variabile che punta ad una cella di memoria
-- nel caso di puntatori a __`struct`__ __:__ __`puntatore->elemento`__ è equivalente a __`(*puntatore).elemento`__ 
-
-
 ---
 ### Operatori 
 |operatori | associatività|
@@ -223,6 +264,7 @@ int fwrite(void *ptr, dim_elem, n_elem, FILE *fp);
 ```c
 //STDIN
 int scanf("modalità",&dato); non è richiesto & per strighe,array e puntatori
+char *gets(char *s)//legge da STDIN, ignorando _space_ e _newline_
 //CARATTERI
 int getchar();
 ```
@@ -285,5 +327,8 @@ struct EL{
 - __LIFO__ Last In First Out
 - Implementazione con __Array__ o __Liste__
 - costo unitario di __`pop()`__ e __`push()`__
-
+#### Code
+- __FIFO__ First In First Out
+- Implementazione con __Array__ o __Liste__
+- costo unitario di __`enqueue()`__ e __`dequeue()`__
 *Realizzato da Michele Yin.*
