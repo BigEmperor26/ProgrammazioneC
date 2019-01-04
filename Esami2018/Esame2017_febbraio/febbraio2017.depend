@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1546278353 source:c:\users\michele\documents\codeblocks\file\esami2018\esame2018_giugno\febbraio2017\main.cpp
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<iostream>
+	"dati.h"
+
+1546278388 c:\users\michele\documents\codeblocks\file\esami2018\esame2018_giugno\febbraio2017\dati.h
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<iostream>
+
+1546278222 source:c:\users\michele\documents\codeblocks\file\esami2018\esame2018_giugno\febbraio2017\dati.cpp
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<iostream>
+	"dati.h"
+

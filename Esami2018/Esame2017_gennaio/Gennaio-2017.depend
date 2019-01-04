@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1546177255 source:c:\users\michele\desktop\gennaio-2017\main.cpp
+	<iostream>
+	<cstdlib>
+	<stdio.h>
+	"dati.h"
+
+1546177057 c:\users\michele\desktop\gennaio-2017\dati.h
+	<cstdlib>
+	<iostream>
+	<stdio.h>
+
+1546177224 source:c:\users\michele\desktop\gennaio-2017\dati.cpp
+	<iostream>
+	<cstdlib>
+	<stdio.h>
+	<cstring>
+	"dati.h"
+
