@@ -17,6 +17,7 @@ typedef struct Tpozzo{
         zona[0]='\0';
         attivo=false;
         quantita=-1.0;
+        tipoEstrazione=Testrazione(0);
     }
     void stampa(){
         printf("%s QTA=%f (",zona,quantita);
@@ -63,7 +64,6 @@ typedef struct TstackLIFO{
     }
     Tpozzo pop(){
         Tpozzo tmp=s[N];
-        delete (s+N-1);
         N--;
         return tmp;
     }
@@ -94,8 +94,9 @@ void addPozzo(TstackLIFO* pozzi[],Tpozzo s){
             case 1 : {fprintf(fp,"%s","(PETROLIO)"); break;}
             case 2 : {fprintf(fp,"%s","(ACQUA)"); break;}
         }
+    }else{
+        pozzi[x]->push(s);
     }
-    pozzi[x]->push(s);
 }
 void stampaPozzi(TstackLIFO* pozzi[]){
     for(int i=0;i<3;i++){
