@@ -94,6 +94,7 @@ void addPozzo(TstackLIFO* pozzi[],Tpozzo s){
             case 1 : {fprintf(fp,"%s","(PETROLIO)"); break;}
             case 2 : {fprintf(fp,"%s","(ACQUA)"); break;}
         }
+        fclose(fp);
     }else{
         pozzi[x]->push(s);
     }
