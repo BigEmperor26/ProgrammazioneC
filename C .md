@@ -265,6 +265,7 @@ int fwrite(void *ptr, dim_elem, n_elem, FILE *fp);
 //STDIN
 int scanf("modalità",&dato);// non è richiesto & per strighe,array e puntatori
 char* gets(char *s)//legge da STDIN, ignorando _space_ e _newline_
+fflush(stdin);//prima di leggere un carattere, è necessario svuotare il buffer. Altrimenti legge l'ultimo carattere inserito, compreso "enter" 
 //CARATTERI
 int getchar();
 ```
