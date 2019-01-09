@@ -81,6 +81,7 @@ void creaPozzo(Tpozzo* p){
     }while(p->quantita<100.00 || p->quantita>800.00);
     p->attivo=bool(rand()%2);
     char tmp[20];
+    fflush(stdin);
     scanf("%s",tmp);
     strcpy(p->zona,tmp);
 }
