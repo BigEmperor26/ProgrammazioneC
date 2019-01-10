@@ -84,6 +84,9 @@ Tcloud* delServer(Tcloud* pc,Tsistoper sis){
     }
     while(tmp!=NULL){
         if(tmp->server.so==sis){
+            if(tmp==pc){
+        		pc=tmp->next;
+			}
             tmp->prev->next=tmp->next;
             tmp->next->prev=tmp->prev;
             Tcloud* cache=tmp->next;
