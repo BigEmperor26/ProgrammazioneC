@@ -11,6 +11,7 @@ void creaVeicolo(Tveicolo* v){
     }while( v->cil<900 || v->cil>4000 );
     v->kw = v->cil/17.00;
     printf("marca: ");
+    //fflush(stdin);
     scanf("%s",v->marca);
 }
 void addVeicolo(TcodaFIFO* p,Tveicolo v){
