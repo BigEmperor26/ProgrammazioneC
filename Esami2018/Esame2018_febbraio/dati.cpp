@@ -46,4 +46,5 @@ void write_file(char nome_file[],Tveicolo v){
         fprintf(fp,"CILINDRATA=%d ",v.cil);
         fprintf(fp,"KW=%f\n",v.kw);
     }
+    fclose(fp);
 }
